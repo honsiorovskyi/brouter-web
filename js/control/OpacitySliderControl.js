@@ -5,6 +5,7 @@ BR.OpacitySliderControl = L.Control.extend({
 
     onAdd(map) {
         var container = L.DomUtil.create('div', 'leaflet-bar control-slider');
+        container.id = 'opacity-slider';
 
         // prevent also dragging map in Chrome
         L.DomEvent.disableClickPropagation(container);

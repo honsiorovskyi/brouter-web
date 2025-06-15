@@ -1,10 +1,12 @@
 BR.confLayers = {};
 
 BR.confLayers.defaultBaseLayers = [
+    'cyclosm',
+    'topotresc',
     'standard',
     'OpenTopoMap',
     'Stamen.Terrain',
-    'Esri.WorldImagery'
+    'Esri.WorldImagery',
 ];
 
 // worldwide monolingual layers to add as default when browser language matches

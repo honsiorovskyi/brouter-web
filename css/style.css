@@ -125,6 +125,14 @@ table.dataTable {
     flex-wrap: wrap;
 }
 
+/* disable controls when editing is disabled */
+
+#map.disable-editing #editing-buttons,
+#map.disable-editing #pois-button,
+#map.disable-editing #opacity-slider {
+    display: none;
+}
+
 /* bottom underneath top controls when overlapping */
 .leaflet-bottom {
     z-index: 999;
@@ -914,6 +922,10 @@ table.dataTable.display tbody tr:hover.selected {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.leaflet-sidebar-right.collapsed {
+    display: none;
 }
 
 /* corresponding to leaflet-sidebar-expand/-close in leaflet-sidebar-v2 */

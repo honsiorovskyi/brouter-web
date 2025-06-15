@@ -43,7 +43,9 @@ BR.PoiMarkers = L.Control.extend({
                     }),
                 },
             ],
-        }).addTo(map);
+        });
+
+        L.easyBar([this.drawButton], { id: 'pois-button' }).addTo(map);
 
         map.on('routing:draw-start', function () {
             self.draw(false);

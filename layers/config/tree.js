@@ -48,6 +48,11 @@ BR.confLayers.tree = {
             },
             'topplus-open',
             {
+                'ES': [
+                    'topotresc',
+                ]
+            },
+            {
                 'FR': [
                     'ignf-aerial',
                     'ignf-map',

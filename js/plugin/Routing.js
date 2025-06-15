@@ -244,7 +244,7 @@ BR.Routing = L.Routing.extend({
         L.DomEvent.addListener(document, 'keyup', this._keyupListener, this);
 
         // enable drawing mode
-        this.draw(true);
+        // this.draw(true);
 
         return container;
     },

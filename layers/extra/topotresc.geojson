@@ -1,0 +1,17 @@
+{
+    "geometry": null,
+    "properties": {
+        "attribution": {
+            "html": "© <a href='https://www.topotresc.com/' target='_blank'>Topotresc</a>"
+        },
+        "id": "topotresc",
+        "max_zoom": 28,
+        "name": "Topotresc",
+        "type": "tms",
+        "url": "https://api.topotresc.com/tiles/{z}/{x}/{y}.png",
+        "layers": "web",
+        "format": "image/png"
+    },
+    "type": "Feature"
+}
+  

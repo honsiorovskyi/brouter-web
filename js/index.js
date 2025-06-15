@@ -31,6 +31,7 @@
             trackMessages,
             trackAnalysis,
             sidebar,
+            editingButton,
             drawButton,
             deleteRouteButton,
             pois,
@@ -53,20 +54,45 @@
 
         router = L.bRouter(); //brouterCgi dummyRouter
 
-        drawButton = L.easyButton({
+        editingButton = L.easyButton({
             states: [
                 {
-                    stateName: 'deactivate-draw',
-                    icon: 'fa-pencil active',
+                    stateName: 'editing-disabled',
+                    icon: 'fa-lock active',
                     onClick(control) {
-                        routing.draw(false);
-                        control.state('activate-draw');
+                        L.DomUtil.removeClass(mapContext.map.getContainer(), 'disable-editing');
+                        control.state('editing-enabled');
                     },
                     title: i18next.t('keyboard.generic-shortcut', {
-                        action: '$t(map.draw-route-stop)',
-                        key: '$t(keyboard.escape)',
+                        action: '$t(map.enable-editing)',
+                        key: 'V',
                     }),
                 },
+                {
+                    stateName: 'editing-enabled',
+                    icon: 'fa-lock',
+                    onClick(control) {
+                        L.DomUtil.addClass(mapContext.map.getContainer(), 'disable-editing');
+
+                        routing.draw(false);
+                        // TODO: disable all other stuff
+
+                        control.state('editing-disabled');
+                    },
+                    title: i18next.t('keyboard.generic-shortcut', {
+                        action: '$t(map.disable-editing)',
+                        key: 'V',
+                    }),
+                },
+            ],
+        });
+
+        // dirty hack until I find a better option :)
+        // disable editing by default
+        L.DomUtil.addClass(mapContext.map.getContainer(), 'disable-editing');
+
+        drawButton = L.easyButton({
+            states: [
                 {
                     stateName: 'activate-draw',
                     icon: 'fa-pencil',
@@ -77,6 +103,18 @@
                     title: i18next.t('keyboard.generic-shortcut', {
                         action: '$t(map.draw-route-start)',
                         key: 'D',
+                    }),
+                },
+                {
+                    stateName: 'deactivate-draw',
+                    icon: 'fa-pencil active',
+                    onClick(control) {
+                        routing.draw(false);
+                        control.state('activate-draw');
+                    },
+                    title: i18next.t('keyboard.generic-shortcut', {
+                        action: '$t(map.draw-route-stop)',
+                        key: '$t(keyboard.escape)',
                     }),
                 },
             ],
@@ -391,11 +429,13 @@
             circlego.addTo(map);
         }
 
+        editingButton.addTo(map);
+
         var buttons = [drawButton, beelineButton, reverseRouteButton, nogos.getButton()];
         if (circlego) buttons.push(circlego.getButton());
         buttons.push(deletePointButton, deleteRouteButton);
 
-        L.easyBar(buttons).addTo(map);
+        L.easyBar(buttons, { id: 'editing-buttons' }).addTo(map);
         nogos.preventRoutePointOnCreate(routing);
 
         if (BR.keys.strava) {
@@ -428,6 +468,9 @@
         // (check before hash plugin init)
         if (!location.hash) {
             profile.update(routingOptions.getOptions());
+
+            // activate route quality by default
+            layersControl.activateLayer(layersControl.getLayerFromString('route-quality'));
 
             // restore active layers from local storage when called without hash
             layersControl.loadActiveLayers();
