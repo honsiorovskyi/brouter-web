@@ -13,155 +13,6 @@
     </head>
 
     <body class="flexcolumn">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsingNavbar"
-                aria-controls="collapsingNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="fa fa-bars"></span>
-            </button>
-            <a class="navbar-brand order-md-last" href="#" data-toggle="modal" data-target="#about"
-                >BRouter-Web <sup class="version">0.18.1</sup></a
-            >
-            <div class="collapse navbar-collapse" id="collapsingNavbar">
-                <div class="navbar-nav">
-                    <form class="form-inline" id="profile-alternative-form">
-                        <div class="form-group">
-                            <select class="selectpicker show-tick" data-width="250px" id="profile-alternative" multiple>
-                                <optgroup label="Profile" data-max-options="1" data-icon="fa-bicycle" id="profile">
-                                    <option data-i18n="navbar.profile.custom">Custom</option>
-                                </optgroup>
-                                <optgroup
-                                    label="Alternative"
-                                    data-max-options="1"
-                                    data-icon="fa-random"
-                                    id="alternative"
-                                >
-                                    <option data-i18n="navbar.alternative.original" value="0" selected>Original</option>
-                                    <option data-i18n="navbar.alternative.first" value="1">1st alternative</option>
-                                    <option data-i18n="navbar.alternative.second" value="2">2nd alternative</option>
-                                    <option data-i18n="navbar.alternative.third" value="3">3rd alternative</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                    </form>
-                    <div class="nav-item">
-                        <a
-                            class="nav-link"
-                            data-toggle="modal"
-                            data-target="#export"
-                            id="exportButton"
-                            href="#"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-i18n="[title]keyboard.generic-shortcut"
-                            data-i18n-options='{ "action": "$t(navbar.export-tooltip)", "key": "X" }'
-                            title="Export route"
-                        >
-                            <span class="fa fa-lg fa-download" aria-hidden="true"> </span>
-                            <span data-i18n="navbar.export">Export</span>
-                        </a>
-                    </div>
-                    <div class="nav-item">
-                        <a
-                            class="nav-link"
-                            data-toggle="modal"
-                            data-target="#share-dialog"
-                            id="shareButton"
-                            href="#"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-i18n="[title]keyboard.generic-shortcut"
-                            data-i18n-options='{ "action": "$t(navbar.share-tooltip)", "key": "A" }'
-                            title="Share Route"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"
-                                />
-                            </svg>
-                            <span data-i18n="navbar.share">Share</span>
-                        </a>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            data-toggle="dropdown"
-                            href="#"
-                            role="button"
-                            id="navbarLoadDropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-i18n="[title]navbar.load.tooltip"
-                            data-i18n-options='{
-                                "tracksAction": "$t(navbar.load.tracks)",
-                                "tracksKey": "O",
-                                "trackAsRouteAction": "$t(trackasroute.title)",
-                                "trackAsRouteKey": "$t(keyboard.shift)+O",
-                                "nogosAction": "$t(navbar.load.nogos)",
-                                "nogosKey": "$t(keyboard.shift)+N"
-                            }'
-                            title="Load route"
-                        >
-                            <span class="fa fa-lg fa-upload" aria-hidden="true"> </span>
-                            <span data-i18n="navbar.load.title">Load</span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarLoadDropdown">
-                            <div id="navbarLoadTracksContainer">
-                                <a class="dropdown-item" data-i18n="navbar.load.tracks" href="#" id="navbarLoadTracks"
-                                    >Tracks</a
-                                >
-                            </div>
-                            <div id="navbarLoadEditTracksContainer">
-                                <a
-                                    class="dropdown-item"
-                                    data-i18n="trackasroute.title"
-                                    data-toggle="modal"
-                                    data-target="#loadedittrack"
-                                    href="#"
-                                    id="navbarLoadEditTracks"
-                                    >Track as Route</a
-                                >
-                            </div>
-                            <a
-                                class="dropdown-item"
-                                data-i18n="navbar.load.nogos"
-                                data-toggle="modal"
-                                data-target="#loadNogos"
-                                href="#"
-                                >No-go areas</a
-                            >
-                        </div>
-                    </div>
-                    <div
-                        class="nav-item"
-                        data-i18n="[title]keyboard.generic-shortcut"
-                        data-i18n-options='{ "action": "$t(about.tooltip)", "key": "H" }'
-                        title="Show more information about BRouter-Web"
-                    >
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#about"
-                            ><span class="fa fa-lg fa-info-circle" aria-hidden="true"></span
-                            ><span data-i18n="navbar.about">About</span></a
-                        >
-                    </div>
-                </div>
-            </div>
-        </nav>
-
         <!-- Credits modal window -->
         <div
             class="modal fade"
@@ -1198,6 +1049,20 @@
                 <ul role="tablist">
                     <li>
                         <a
+                            href="#tab_nav"
+                            role="tab"
+                            data-i18n="[title]sidebar.tab-tooltip"
+                            data-i18n-options='{
+                                "action": "$t(sidebar.analysis.tooltip)",
+                                "toggleKey": "T",
+                                "switchKey": "$t(keyboard.shift)+T"
+                            }'
+                            title="Main menu"
+                            ><i class="fa fa-bars"></i
+                        ></a>
+                    </li>
+                    <li>
+                        <a
                             href="#tab_layers_control"
                             role="tab"
                             data-i18n="[title]sidebar.tab-tooltip"
@@ -1300,6 +1165,168 @@
                 </div>
                 <div id="sidebar" class="leaflet-sidebar collapsed">
                     <div class="leaflet-sidebar-content">
+                        <div class="leaflet-sidebar-pane" id="tab_nav">
+                            <h1 class="leaflet-sidebar-header">
+                                <span class="leaflet-sidebar-close"><i class="fa fa-caret-right"></i></span
+                                ><span class="d-none d-md-block leaflet-sidebar-expand"
+                                    ><i class="fa fa-expand"></i></span
+                                ><a class="order-md-last" href="#" data-toggle="modal" data-target="#about"
+                                    >BRouter-Web <sup class="version">0.18.1</sup></a
+                                >
+                            </h1>
+                            <nav class="navbar">
+                                <div class="navbar-nav">
+                                    <form class="form-inline" id="profile-alternative-form">
+                                        <select
+                                            class="selectpicker show-tick"
+                                            data-width="100%"
+                                            id="profile-alternative"
+                                            multiple
+                                        >
+                                            <optgroup
+                                                label="Profile"
+                                                data-max-options="1"
+                                                data-icon="fa-bicycle"
+                                                id="profile"
+                                            >
+                                                <option data-i18n="navbar.profile.custom">Custom</option>
+                                            </optgroup>
+                                            <optgroup
+                                                label="Alternative"
+                                                data-max-options="1"
+                                                data-icon="fa-random"
+                                                id="alternative"
+                                            >
+                                                <option data-i18n="navbar.alternative.original" value="0" selected>
+                                                    Original
+                                                </option>
+                                                <option data-i18n="navbar.alternative.first" value="1">
+                                                    1st alternative
+                                                </option>
+                                                <option data-i18n="navbar.alternative.second" value="2">
+                                                    2nd alternative
+                                                </option>
+                                                <option data-i18n="navbar.alternative.third" value="3">
+                                                    3rd alternative
+                                                </option>
+                                            </optgroup>
+                                        </select>
+                                    </form>
+                                    <div class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            data-toggle="modal"
+                                            data-target="#export"
+                                            id="exportButton"
+                                            href="#"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                            data-i18n="[title]keyboard.generic-shortcut"
+                                            data-i18n-options='{ "action": "$t(navbar.export-tooltip)", "key": "X" }'
+                                            title="Export route"
+                                        >
+                                            <span class="fa fa-lg fa-download" aria-hidden="true"> </span>
+                                            <span data-i18n="navbar.export">Export</span>
+                                        </a>
+                                    </div>
+                                    <div class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            data-toggle="modal"
+                                            data-target="#share-dialog"
+                                            id="shareButton"
+                                            href="#"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                            data-i18n="[title]keyboard.generic-shortcut"
+                                            data-i18n-options='{ "action": "$t(navbar.share-tooltip)", "key": "A" }'
+                                            title="Share Route"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                viewBox="0 0 16 16"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"
+                                                />
+                                            </svg>
+                                            <span data-i18n="navbar.share">Share</span>
+                                        </a>
+                                    </div>
+                                    <div class="nav-item dropdown">
+                                        <a
+                                            class="nav-link dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            href="#"
+                                            role="button"
+                                            id="navbarLoadDropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                            data-i18n="[title]navbar.load.tooltip"
+                                            data-i18n-options='{
+                                            "tracksAction": "$t(navbar.load.tracks)",
+                                            "tracksKey": "O",
+                                            "trackAsRouteAction": "$t(trackasroute.title)",
+                                            "trackAsRouteKey": "$t(keyboard.shift)+O",
+                                            "nogosAction": "$t(navbar.load.nogos)",
+                                            "nogosKey": "$t(keyboard.shift)+N"
+                                        }'
+                                            title="Load route"
+                                        >
+                                            <span class="fa fa-lg fa-upload" aria-hidden="true"> </span>
+                                            <span data-i18n="navbar.load.title">Load</span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarLoadDropdown">
+                                            <div id="navbarLoadTracksContainer">
+                                                <a
+                                                    class="dropdown-item"
+                                                    data-i18n="navbar.load.tracks"
+                                                    href="#"
+                                                    id="navbarLoadTracks"
+                                                    >Tracks</a
+                                                >
+                                            </div>
+                                            <div id="navbarLoadEditTracksContainer">
+                                                <a
+                                                    class="dropdown-item"
+                                                    data-i18n="trackasroute.title"
+                                                    data-toggle="modal"
+                                                    data-target="#loadedittrack"
+                                                    href="#"
+                                                    id="navbarLoadEditTracks"
+                                                    >Track as Route</a
+                                                >
+                                            </div>
+                                            <a
+                                                class="dropdown-item"
+                                                data-i18n="navbar.load.nogos"
+                                                data-toggle="modal"
+                                                data-target="#loadNogos"
+                                                href="#"
+                                                >No-go areas</a
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="nav-item"
+                                        data-i18n="[title]keyboard.generic-shortcut"
+                                        data-i18n-options='{ "action": "$t(about.tooltip)", "key": "H" }'
+                                        title="Show more information about BRouter-Web"
+                                    >
+                                        <a class="nav-link" href="#" data-toggle="modal" data-target="#about"
+                                            ><span class="fa fa-lg fa-info-circle" aria-hidden="true"></span
+                                            ><span data-i18n="navbar.about">About</span></a
+                                        >
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
                         <div class="leaflet-sidebar-pane" id="tab_layers_control">
                             <h1 class="leaflet-sidebar-header">
                                 <span class="leaflet-sidebar-close"><i class="fa fa-caret-right"></i></span
@@ -1542,55 +1569,14 @@
                     </li>
                     <li>
                         <div class="text-muted small d-none d-md-block">
-                            <span data-i18n="footer.total-energy">Total Energy</span>&#8239;|&#8239;<span
-                                data-i18n="footer.energy-per-100km"
-                                >Energy per 100 km</span
-                            >
+                            <span data-i18n="footer.ascend">Ascend</span>
                         </div>
                         <p class="stats-label">
-                            <span id="totalenergy">-</span><span class="d-none d-md-inline">&#8239;</span
-                            ><abbr
-                                class="d-none d-md-inline"
-                                data-i18n="[title]footer.kilowatthour;footer.kilowatthour-abbrev"
-                                title="kilowatt hours"
-                                >kWh</abbr
-                            >&#8239;|&#8239;<span id="meanenergy">-</span>&#8239;<abbr
-                                data-i18n="[title]footer.kilowatthour;footer.kilowatthour-abbrev"
-                                title="kilowatt hours"
-                                >kWh</abbr
-                            >
-                        </p>
-                    </li>
-                    <li>
-                        <div class="text-muted small d-none d-md-block">
-                            <span data-i18n="footer.ascend">Ascend</span>&#8239;|&#8239;<span
-                                data-i18n="footer.plain-ascend"
-                                >Plain ascend</span
-                            >
-                        </div>
-                        <p class="stats-label">
-                            <span id="ascend">-</span><span class="d-none d-md-inline">&#8239;</span
-                            ><abbr
-                                class="d-none d-md-inline"
-                                data-i18n="[title]footer.meter;footer.meter-abbrev"
-                                title="meters"
-                                >m</abbr
-                            >&#8239;|&#8239;<span id="plainascend">-</span>&#8239;<abbr
+                            <span id="ascend">-</span>&#8239;<abbr
                                 data-i18n="[title]footer.meter;footer.meter-abbrev"
                                 title="meters"
                                 >m</abbr
                             >
-                        </p>
-                    </li>
-                    <li>
-                        <div class="text-muted small d-none d-md-block">
-                            <span data-i18n="footer.cost">Cost</span>&#8239;|&#8239;<span
-                                data-i18n="footer.mean-cost-factor"
-                                >Mean cost factor</span
-                            >
-                        </div>
-                        <p class="stats-label">
-                            <span id="cost">-</span>&#8239;|&#8239;<span id="meancostfactor">-</span>
                         </p>
                     </li>
                 </ul>

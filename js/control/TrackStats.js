@@ -34,14 +34,14 @@ BR.TrackStats = L.Class.extend({
         // alternative 3-digit format down to meters as tooltip
         $('#distance').attr('title', length3 + ' km');
         $('#ascend').html(formattedAscend);
-        $('#plainascend').html(formattedPlainAscend);
-        $('#cost').html(formattedCost);
-        $('#meancostfactor').html(meanCostFactor);
+        // $('#plainascend').html(formattedPlainAscend);
+        // $('#cost').html(formattedCost);
+        // $('#meancostfactor').html(meanCostFactor);
         $('#totaltime').html(formattedTime);
         // alternative time format with seconds display as tooltip
         $('#totaltime').attr('title', formattedTimeHMS + ' h');
-        $('#totalenergy').html(formattedEnergy);
-        $('#meanenergy').html(meanEnergy);
+        // $('#totalenergy').html(formattedEnergy);
+        // $('#meanenergy').html(meanEnergy);
     },
 
     calcStats(polyline, segments) {
